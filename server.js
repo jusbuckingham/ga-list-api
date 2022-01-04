@@ -1,8 +1,8 @@
 const express = require("express");
-const { User } = require("./models");
-const { Sale } = require("./models");
-const { Job } = require("./models");
-const { Forum } = require("./models");
+const { Users } = require("./models");
+const { Sales } = require("./models");
+const { Jobs } = require("./models");
+const { Forums } = require("./models");
 const app = express();
 
 app.use((req, res, next) => {
