@@ -56,5 +56,5 @@ app.get("/forums", async (request, response) => {
 });
 
 app.listen(3000, () => {
-    console.log("Server is jamming on port 3000 🎧")
+    console.log("Server is jammin' on port 3000 🎧")
 });
