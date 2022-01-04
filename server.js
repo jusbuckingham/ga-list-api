@@ -18,7 +18,7 @@ app.use(express.json());
 app.get("/users", async (request, response) => {
 
     try {
-        const usersArray = await users.find({});
+        const usersArray = await Users.find({});
         response.json({ usersArray });
     } catch (error) {
         response.status(500).send(error);
@@ -28,7 +28,7 @@ app.get("/users", async (request, response) => {
 app.get("/sales", async (request, response) => {
 
     try {
-        const salesArray = await sales.find({});
+        const salesArray = await Sales.find({});
         response.json({ salesArray });
     } catch (error) {
         response.status(500).send(error);
@@ -38,7 +38,7 @@ app.get("/sales", async (request, response) => {
 app.get("/jobs", async (request, response) => {
 
     try {
-        const jobsArray = await jobs.find({});
+        const jobsArray = await Jobs.find({});
         response.json({ jobsArray });
     } catch (error) {
         response.status(500).send(error);
@@ -48,7 +48,7 @@ app.get("/jobs", async (request, response) => {
 app.get("/forums", async (request, response) => {
 
     try {
-        const forumsArray = await forums.find({});
+        const forumsArray = await Forums.find({});
         response.json({ forumsArray });
     } catch (error) {
         response.status(500).send(error);
