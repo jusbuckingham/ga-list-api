@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const ForumsSchema = new mongoose.Schema({
-    title: String,
-    description: { type: String, required: true },
+    title: { type: String, required: true },
+    description: String,
     post_text: String,
-    username: String,
+    username: { type: String, required: true },
 });
 
 const Forums = mongoose.model("Forums", ForumsSchema);
