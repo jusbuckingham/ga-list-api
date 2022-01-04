@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const ForumsSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    description: String,
-    post_text: String,
+    description: { type: String, required: true },
+    post_text: { type: String, required: true },
     username: { type: String, required: true },
 });
 
