@@ -2,8 +2,9 @@ const { Users } = require("./Models");
 const { Sales } = require("./Models");
 const { Jobs } = require("./Models");
 const { Forums } = require("./Models")
+const { Posts } = require("./Models")
 
-// Create
+// create jobs
 db.jobs.insertMany([
     {
         title: 'PAID research study for mobile gamers!',
@@ -20,12 +21,10 @@ db.jobs.insertMany([
         location: 'lansing'
     }
 ])
-    .then((newTvshows) => {
-        console.log(newTvshows);
+    .then((newJobs) => {
+        console.log(newJobs);
     })
     .catch((error) => {
         console.log(error);
     });
 
-// comments
-db.posts.insertMany()
