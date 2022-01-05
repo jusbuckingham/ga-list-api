@@ -5,6 +5,8 @@ const ForumsSchema = new mongoose.Schema({
     description: { type: String, required: true },
     post_text: { type: String, required: true },
     username: { type: String, required: true },
+    likes: { type: String, required: true },
+    comments: { type: String, required: true },
 });
 
 const Forums = mongoose.model("Forums", ForumsSchema);
