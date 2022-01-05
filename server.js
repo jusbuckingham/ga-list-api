@@ -3,6 +3,7 @@ const { Users } = require("./models");
 const { Sales } = require("./models");
 const { Jobs } = require("./models");
 const { Forums } = require("./models");
+const { Posts } = require("./models");
 const app = express();
 const cors = require('cors');
 const passport = require('passport');
@@ -26,6 +27,8 @@ app.use(passport.initialize());
 // controllers
 const users = require('./controllers/users');
 
+
+// routes
 app.get('/', ( req, res ) => {
     res.json({
         message: "Welcome to the MERN Auth API"
@@ -67,6 +70,16 @@ app.get("/forums", async (request, response) => {
     try {
         const forumsArray = await Forums.find({});
         response.json({ forumsArray });
+    } catch (error) {
+        response.status(500).send(error);
+    }
+});
+
+app.get("/posts", async (request, response) => {
+
+    try {
+        const postsArray = await Posts.find({});
+        response.json({ postsArray });
     } catch (error) {
         response.status(500).send(error);
     }

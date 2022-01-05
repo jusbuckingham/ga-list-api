@@ -24,7 +24,7 @@ db.jobs.insertMany([
   },
   {
     title: 'Calling all gamers',
-    description: 'Mint conditiongame gear',
+    description: 'Mint condition game gear',
     payment: '$5',
     contact_info: 'perice@msu.edu',
     location: 'lansing'
