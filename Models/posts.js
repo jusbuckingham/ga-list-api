@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
-const postsSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    body: { type: String, required: true },
-    comments: { type: String, required: true },
-});
-
 const commentsSchema = new mongoose.Schema({
     title: { type: String, required: true },
     body: { type: String, required: true },
     comments: { type: String, required: true },
 });
 
-const Posts = mongoose.model("Posts", commentsSchema);
+const postsSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    body: { type: String, required: true },
+    comments: [commentsSchema],
+});
+
+const Posts = mongoose.model("Posts", postsSchema);
 
 module.exports = Posts; 
