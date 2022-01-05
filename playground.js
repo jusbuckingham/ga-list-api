@@ -5,7 +5,7 @@ const { Forums } = require("./Models")
 const { Posts } = require("./Models")
 
 // create jobs
-db.jobs.insertMany([
+Jobs.insertMany([
     {
         title: 'PAID research study for mobile gamers!',
         description: 'We are a user research company specializing in market research and usability testing, and we are looking for participants for an upcoming paid user research study!',

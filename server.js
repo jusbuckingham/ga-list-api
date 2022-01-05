@@ -4,6 +4,10 @@ const { Sales } = require("./models");
 const { Jobs } = require("./models");
 const { Forums } = require("./models");
 const app = express();
+const cors = require('cors');
+const passport = require('passport');
+require('dotenv').config();
+require('./config/passport')(passport);
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -14,7 +18,20 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
+app.use(passport.initialize());
+
+// controllers
+const users = require('./controllers/users');
+
+app.get('/', ( req, res ) => {
+    res.json({
+        message: "Welcome to the MERN Auth API"
+    });
+});
+
 app.get("/users", async (request, response) => {
 
     try {
@@ -54,6 +71,8 @@ app.get("/forums", async (request, response) => {
         response.status(500).send(error);
     }
 });
+
+app.use('/users', users);
 
 app.listen(3000, () => {
     console.log("Server is jammin' on port 3000 🎧")
