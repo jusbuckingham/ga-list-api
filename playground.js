@@ -57,5 +57,11 @@ db.comments.insertMany([
         date: new Date()
     }
 
+])
 
-]);
+    .then((newComments) => {
+        console.log(newComments);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
