@@ -27,3 +27,5 @@ db.jobs.insertMany([
         console.log(error);
     });
 
+// comments
+db.posts.insertMany()

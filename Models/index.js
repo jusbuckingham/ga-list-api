@@ -26,4 +26,5 @@ module.exports = {
   Sales: require("./sales"),
   Jobs: require("./jobs"),
   Forums: require("./forums"),
+  Posts: require("./posts")
 };
