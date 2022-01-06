@@ -1,9 +1,10 @@
 const express = require("express");
-const { Users, Comments } = require("./models");
+const { Users } = require("./models");
 const { Sales } = require("./models");
 const { Jobs } = require("./models");
 const { Forums } = require("./models");
 const { Posts } = require("./models");
+const { Comments } = require("./models")
 const app = express();
 const cors = require('cors');
 const passport = require('passport');
