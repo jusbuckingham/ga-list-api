@@ -88,6 +88,7 @@ app.get("/posts", async (request, response) => {
 });
 
 
+// comments routes
 app.get("/comments", async (request, response) => {
     try {
         const commentArray = await Comments.find({});
