@@ -14,6 +14,19 @@ router.get("/comments", async (request, response) => {
     }
 });
 
+router.post("/comments/new" , async (request, response) => {
+    try{
+
+        const newComment = await Comments.insertMany({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
+        })
+    }
+    catch(error){
+        response.status(500).send(error);
+    }
+});
 
 
 module.exports = router;

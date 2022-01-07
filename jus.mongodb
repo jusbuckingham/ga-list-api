@@ -12,7 +12,7 @@ const collection = 'jobs';
 use(database);
 
 // Create a new collection.
-// db.createCollection(collection);
+db.createCollection(collection);
 
 // Create
 db.jobs.insertMany([
@@ -21,14 +21,14 @@ db.jobs.insertMany([
     description: 'We are a user research company specializing in market research and usability testing, and we are looking for participants for an upcoming paid user research study!',
     payment: '$100',
     contact_info: 'jjbigboy@hotmail.com',
-    location: 'lansing'
+    location: 'los angeles'
   },
   {
     title: 'Calling all gamers',
     description: 'Mint condition game gear',
     payment: '$5',
     contact_info: 'perice@msu.edu',
-    location: 'lansing'
+    location: 'los angeles'
   }
 ]);
 
