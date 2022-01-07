@@ -4,6 +4,7 @@ const { Jobs } = require("./models");
 const { Forums } = require("./models")
 const { Posts } = require("./models")
 const { Comments } = require("./models");
+import faker from 'faker';
 
 // create jobs
 Jobs.insertMany([
@@ -130,3 +131,5 @@ Sales.insertMany([
     .catch((error) => {
         console.log(error);
     });
+
+
