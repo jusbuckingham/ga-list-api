@@ -29,6 +29,11 @@ app.use(passport.initialize());
 const users = require('./controllers/users');
 const { request, response } = require("express");
 
+// const forums = require('./controllers/forums');
+// const jobs = require('./controllers/jobs');
+// const posts = require('./controllers/posts');
+// const sales = require('./controllers/sales');
+
 
 // routes
 app.get('/', (req, res) => {
@@ -103,6 +108,10 @@ app.get("/comments", async (request, response) => {
 
 
 app.use('/users', users);
+// app.use('/forums', forums);
+// app.use('/jobs', jobs);
+// app.use('/posts', posts);
+// app.use('/sales', users);
 
 app.listen(3000, () => {
     console.log("Server is jammin' on port 3000 🎧")
