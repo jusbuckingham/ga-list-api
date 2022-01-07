@@ -1,9 +1,9 @@
-const { Users } = require("./Models");
-const { Sales } = require("./Models");
-const { Jobs } = require("./Models");
-const { Forums } = require("./Models")
-const { Posts } = require("./Models")
-const { Comments } = require("./Models");
+const { Users } = require("./models");
+const { Sales } = require("./models");
+const { Jobs } = require("./models");
+const { Forums } = require("./models")
+const { Posts } = require("./models")
+const { Comments } = require("./models");
 
 // create jobs
 Jobs.insertMany([
@@ -30,7 +30,7 @@ Jobs.insertMany([
     });
 
 //create a comments
-db.comments.insertMany([
+Comments.insertMany([
     {
         header: 'Most Covid infections are fake and mass hysteria',
         content: 'They believe a threat to be real because someone says so, </br>or because it fits their experience. Due to the threatening delusion, a large group of people gets collectively very upset. In other words, a threat, whether real or imaginary [17], causes collective anxiety [18].',
