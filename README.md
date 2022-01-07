@@ -23,9 +23,10 @@
 
 ## USER STORIES
 ### As a user I want to...
-1. 
-2. 
-3. 
+1. Access the home page (without logging in).
+2. To browse listings (without logging in).
+3. To log in (optional).
+4. To create and manage my own posts (have to be logged in).
 
 ### Additional details
 - Who this is for: 
