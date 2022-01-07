@@ -17,13 +17,10 @@ router.get("/comments", async (request, response) => {
 router.post("/comments/new" , async (request, response) => {
     try{
 
-        const newJob = await Comments.insertMany({
-            title: request.body.name, 
-            description: request.body.address, 
-            post_text: request.body.city, 
-            username: request.body.state, 
-            likes: request.body.zipCode, 
-            comments: request.body.state, 
+        const newComment = await Comments.insertMany({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
         })
     }
     catch(error){
