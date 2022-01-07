@@ -5,6 +5,7 @@ const { Forums } = require("./models")
 const { Posts } = require("./models")
 const { Comments } = require("./models");
 
+
 // create jobs
 Jobs.insertMany([
     {
@@ -130,3 +131,5 @@ Sales.insertMany([
     .catch((error) => {
         console.log(error);
     });
+
+

@@ -30,6 +30,7 @@ app.use(passport.initialize());
 // controllers
 const users = require('./controllers/users');
 const { request, response } = require("express");
+const res = require("express/lib/response");
 
 // const forums = require('./controllers/forums');
 // const jobs = require('./controllers/jobs');
@@ -62,6 +63,7 @@ app.get("/sales", async (request, response) => {
     } catch (error) {
         response.status(500).send(error);
     }
+
 });
 //app.use(express.json());
 app.get("/jobs", async (request, response) => {
@@ -105,8 +107,15 @@ app.get("/comments", async (request, response) => {
     }
 });
 
+//app.use('/users', users);
 
-
+//import controllers
+app.use('/users', require('./controllers/users'));
+app.use('/sales', require('./controllers/sales'));
+app.use('/posts', require('./controllers/posts'));
+app.use('/jobs', require('./controllers/jobs'));
+app.use('/forums', require('./controllers/forums'));
+app.use('/comments', require('./controllers/comments'));
 
 
 app.use('/users', users);
