@@ -29,10 +29,10 @@ This was built using the MERN stack.
 3. To log in (optional).
 4. To create and manage my own posts (have to be logged in).
 
-### Additional details
+<!-- ### Additional details
 - Who this is for: 
 - What this is for: 
-- Why: 
+- Why:  -->
 
 <!-- ## Code Snippets -->
 
