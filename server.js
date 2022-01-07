@@ -102,11 +102,16 @@ app.get("/comments", async (request, response) => {
     }
 });
 
+//app.use('/users', users);
 
+//import controllers
+app.use('/users', require('./controllers/users'));
+app.use('/sales', require('./controllers/sales'));
+app.use('/posts', require('./controllers/posts'));
+app.use('/jobs', require('./controllers/jobs'));
+app.use('/forums', require('./controllers/forums'));
+app.use('/comments', require('./controllers/comments'));
 
-
-
-app.use('/users', users);
 
 app.listen(3000, () => {
     console.log("Server is jammin' on port 3000 🎧")
