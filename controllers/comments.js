@@ -18,9 +18,9 @@ router.post("/comments/new" , async (request, response) => {
     try{
 
         const newComment = await Comments.insertMany({
-            header: request.body.name, 
-            content: request.body.address, 
-            date: request.body.city,  
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
         })
     }
     catch(error){

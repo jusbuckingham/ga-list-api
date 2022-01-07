@@ -43,5 +43,5 @@ module.exports = {
   Jobs: require("./jobs"),
   Forums: require("./forums"),
   Posts: require("./posts"),
-  // Comments: require("./comments")
+  Comments: require("./comments")
 };
