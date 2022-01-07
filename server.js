@@ -30,6 +30,7 @@ app.use(passport.initialize());
 // controllers
 const users = require('./controllers/users');
 const { request, response } = require("express");
+const res = require("express/lib/response");
 
 
 // routes
@@ -57,6 +58,7 @@ app.get("/sales", async (request, response) => {
     } catch (error) {
         response.status(500).send(error);
     }
+
 });
 //app.use(express.json());
 app.get("/jobs", async (request, response) => {
