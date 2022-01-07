@@ -2,23 +2,24 @@
 
 
 ## Purpose of this application
+To serve as a marketplace to buy, sell and enteract with the community. 
+
+<!-- ## How does it work? -->
 
 
-## How does it work?
-
-
-## Screenshots
+<!-- ## Screenshots -->
 
 ## Explanations of the technologies used
+This was built using the MERN stack.
 
 
-## A couple paragraphs about the general approach you took
+<!-- ## A couple paragraphs about the general approach you took -->
 
 
-## Installation instructions for any dependencies
+<!-- ## Installation instructions for any dependencies -->
 
 
-## ERD & WIREFRAME
+<!-- ## ERD & WIREFRAME -->
 
 
 ## USER STORIES
@@ -33,7 +34,7 @@
 - What this is for: 
 - Why: 
 
-## Code Snippets
+<!-- ## Code Snippets -->
 
 
-## Descriptions of any unsolved problems or major hurdles your team had to overcome.
+<!-- ## Descriptions of any unsolved problems or major hurdles your team had to overcome. -->
