@@ -4,8 +4,9 @@
 const database = 'ga-list';
 // const collection = 'users';
 // const collection = 'sales';
-//const collection = 'jobs';
+const collection = 'jobs';
 // const collection = 'forums';
+//const collection = 'comments';
 
 // Create a new database.
 use(database);

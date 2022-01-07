@@ -20,6 +20,8 @@ app.use((req, res, next) => {
     next();
 });
 
+
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -56,16 +58,16 @@ app.get("/sales", async (request, response) => {
         response.status(500).send(error);
     }
 });
-
+//app.use(express.json());
 app.get("/jobs", async (request, response) => {
 
     try {
-        const jobsArray = await Jobs.find({});
+        const jobsArray = await Jobs.find({})
         response.json({ jobsArray });
     } catch (error) {
         response.status(500).send(error);
     }
-});
+})
 
 app.get("/forums", async (request, response) => {
 
@@ -90,8 +92,8 @@ app.get("/posts", async (request, response) => {
 
 app.get("/comments", async (request, response) => {
     try {
-        const commentArray = await Comments.find({});
-        response.json({ commentArray });
+        const commentsArray = await Comments.find({});
+        response.json({ commentsArray });
 
     } catch (error) {
         response.status(500).send(error);
