@@ -28,7 +28,7 @@ app.use(cors());
 app.use(passport.initialize());
 
 // controllers
-const users = require('./controllers/users');
+const users = require('./controllers/user');
 const { request, response } = require("express");
 const res = require("express/lib/response");
 
@@ -102,10 +102,10 @@ app.get("/comments", async (request, response) => {
     }
 });
 
-//app.use('/users', users);
+app.use('/users', users);
 
 //import controllers
-app.use('/users', require('./controllers/users'));
+app.use('/users', require('./controllers/user'));
 app.use('/sales', require('./controllers/sales'));
 app.use('/posts', require('./controllers/posts'));
 app.use('/jobs', require('./controllers/jobs'));
