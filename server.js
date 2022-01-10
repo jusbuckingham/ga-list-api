@@ -45,15 +45,15 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get("/users", async (request, response) => {
+// app.get("/users", async (request, response) => {
 
-    try {
-        const usersArray = await Users.find({});
-        response.json({ usersArray });
-    } catch (error) {
-        response.status(500).send(error);
-    }
-});
+//     try {
+//         const usersArray = await Users.find({});
+//         response.json({ usersArray });
+//     } catch (error) {
+//         response.status(500).send(error);
+//     }
+// });
 
 app.get("/sales", async (request, response) => {
 
@@ -110,20 +110,22 @@ app.get("/comments", async (request, response) => {
 app.post('/stored', (req, res) => {
     console.log(req.body);
     db.collection('quotes').insertOne(req.body, (err, data) => {
-        if(err) return console.log(err);
+        if (err) return console.log(err);
         res.send(('saved to db: ' + data));
     })
 });
 
-//app.use('/users', users);
+
 
 //import controllers
-app.use('/users', require('./controllers/users'));
-app.use('/sales', require('./controllers/sales'));
-app.use('/posts', require('./controllers/posts'));
-app.use('/jobs', require('./controllers/jobs'));
-app.use('/forums', require('./controllers/forums'));
-app.use('/comments', require('./controllers/comments'));
+// app.use('/users', require('./controllers/users'));
+// app.use('/sales', require('./controllers/sales'));
+// app.use('/posts', require('./controllers/posts'));
+// app.use('/jobs', require('./controllers/jobs'));
+// app.use('/forums', require('./controllers/forums'));
+// app.use('/comments', require('./controllers/comments'));
+
+
 
 
 app.use('/users', users);
