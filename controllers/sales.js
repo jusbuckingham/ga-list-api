@@ -4,7 +4,7 @@ const router = express.Router();
 const { Sales } = require('../models')
 
 
-router.get("/sales", async (request, response) => {
+router.get("/", async (request, response) => {
 
     try {
         const salesArray = await Sales.find({});
@@ -14,7 +14,7 @@ router.get("/sales", async (request, response) => {
     }
 });
 
-router.post("/sales/new" , async (request, response) => {
+router.post("/new" , async (request, response) => {
     try{
 
         const newSale = await Sales.insertMany({

@@ -4,7 +4,7 @@ const router = express.Router();
 const { Comments } = require('../models')
 
 
-router.get("/comments", async (request, response) => {
+router.get("/", async (request, response) => {
 
     try {
         const commentsArray = await Comments.find({});
@@ -14,7 +14,7 @@ router.get("/comments", async (request, response) => {
     }
 });
 
-router.post("/comments/new" , async (request, response) => {
+router.post("new" , async (request, response) => {
     try{
 
         const newComment = await Comments.insertMany({

@@ -4,7 +4,7 @@ const router = express.Router();
 const { Forums } = require('../models')
 
 
-router.get("/forums", async (request, response) => {
+router.get("/", async (request, response) => {
 
     try {
         const forumsArray = await Forums.find({});
@@ -14,7 +14,7 @@ router.get("/forums", async (request, response) => {
     }
 });
 
-router.post("/forums/new" , async (request, response) => {
+router.post("new" , async (request, response) => {
     try{
 
         const newForum = await Forums.insertMany({
