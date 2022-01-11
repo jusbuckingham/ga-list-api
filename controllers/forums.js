@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const { Forums } = require('../models')
+const { Forums } = require('../Models')
 
 
 router.get("/", async (request, response) => {
