@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const { Jobs } = require('../Models')
+const { Jobs } = require('../models')
 
 
 router.get("/", async (request, response) => {
@@ -17,60 +17,65 @@ router.get("/", async (request, response) => {
     }
 });
 
-router.post("/new" , async (request, response) => {
-    try{
+router.post("/new", async (request, response) => {
+    try {
         // Kyle & Avery's Changes
-        response.send('ok');
+        response.send('ok')
         console.log(request.body)
-        return;
 
         const newJob = await Jobs.insertMany({
-            title: request.body.name, 
-            description: request.body.description, 
-            post_text: request.body.post_text, 
-            username: request.body.username, 
-            likes: request.body.likes, 
-            comments: request.body.comments, 
+            title: request.body.title,
+            description: request.body.description,
+            post_text: request.body.post_text,
+            username: request.body.username,
+            likes: request.body.likes,
+            comments: request.body.comments,
         })
     }
-    catch(error){
+    catch (error) {
         response.status(500).send(error);
     }
 });
 
-// router.post("/edit" , async (request, response) => {
-//     try{
+router.post("/edit", async (request, response) => {
+    try {
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
-//         const editJob = await Jobs.updateOne({
-//             title: request.body.name, 
-//             description: request.body.description, 
-//             post_text: request.body.post_text, 
-//             username: request.body.username, 
-//             likes: request.body.likes, 
-//             comments: request.body.comments, 
-//         })
-//     }
-//     catch(error){
-//         response.status(500).send(error);
-//     }
-// });
+        const editJob = await Jobs.updateOne({
+            title: request.body.name,
+            description: request.body.description,
+            post_text: request.body.post_text,
+            username: request.body.username,
+            likes: request.body.likes,
+            comments: request.body.comments,
+        })
+    }
+    catch (error) {
+        response.status(500).send(error);
+    }
+});
 
-// router.post("/delete" , async (request, response) => {
-//     try{
+router.post("/delete", async (request, response) => {
+    try {
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
-//         const deleteJob = await Jobs.deleteOne({
-//             title: request.body.name, 
-//             description: request.body.description, 
-//             post_text: request.body.post_text, 
-//             username: request.body.username, 
-//             likes: request.body.likes, 
-//             comments: request.body.comments, 
-//         })
-//     }
-//     catch(error){
-//         response.status(500).send(error);
-//     }
-// });
+        const deleteJob = await Jobs.deleteOne({
+            title: request.body.name,
+            description: request.body.description,
+            post_text: request.body.post_text,
+            username: request.body.username,
+            likes: request.body.likes,
+            comments: request.body.comments,
+        })
+    }
+    catch (error) {
+        response.status(500).send(error);
+    }
+});
 
 
 module.exports = router;
