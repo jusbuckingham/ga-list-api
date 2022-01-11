@@ -32,6 +32,11 @@ const users = require('./controllers/user');
 const { request, response } = require("express");
 const res = require("express/lib/response");
 
+const forums = require('./controllers/forums');
+const jobs = require('./controllers/jobs');
+const posts = require('./controllers/posts');
+const sales = require('./controllers/sales');
+
 
 // routes
 app.get('/', (req, res) => {
@@ -40,15 +45,15 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get("/users", async (request, response) => {
+// app.get("/users", async (request, response) => {
 
-    try {
-        const usersArray = await Users.find({});
-        response.json({ usersArray });
-    } catch (error) {
-        response.status(500).send(error);
-    }
-});
+//     try {
+//         const usersArray = await Users.find({});
+//         response.json({ usersArray });
+//     } catch (error) {
+//         response.status(500).send(error);
+//     }
+// });
 
 app.get("/sales", async (request, response) => {
 
@@ -81,15 +86,15 @@ app.get("/forums", async (request, response) => {
     }
 });
 
-app.get("/posts", async (request, response) => {
+// app.get("/posts", async (request, response) => {
 
-    try {
-        const postsArray = await Posts.find({});
-        response.json({ postsArray });
-    } catch (error) {
-        response.status(500).send(error);
-    }
-});
+//     try {
+//         const postsArray = await Posts.find({});
+//         response.json({ postsArray });
+//     } catch (error) {
+//         response.status(500).send(error);
+//     }
+// });
 
 
 app.get("/comments", async (request, response) => {
@@ -102,7 +107,19 @@ app.get("/comments", async (request, response) => {
     }
 });
 
+<<<<<<< HEAD
 app.use('/users', users);
+=======
+app.post('/stored', (req, res) => {
+    console.log(req.body);
+    db.collection('quotes').insertOne(req.body, (err, data) => {
+        if (err) return console.log(err);
+        res.send(('saved to db: ' + data));
+    })
+});
+
+
+>>>>>>> 15827aa19d49acd10bfc936ad4059e7e0d164e93
 
 //import controllers
 app.use('/users', require('./controllers/user'));
@@ -112,6 +129,14 @@ app.use('/jobs', require('./controllers/jobs'));
 app.use('/forums', require('./controllers/forums'));
 app.use('/comments', require('./controllers/comments'));
 
+
+
+
+app.use('/users', users);
+app.use('/forums', forums);
+app.use('/jobs', jobs);
+app.use('/posts', posts);
+app.use('/sales', users);
 
 app.listen(3000, () => {
     console.log("Server is jammin' on port 3000 🎧")

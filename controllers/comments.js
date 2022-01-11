@@ -4,7 +4,10 @@ const router = express.Router();
 const { Comments } = require('../models')
 
 
-router.get("/comments", async (request, response) => {
+router.get("/", async (request, response) => {
+    // Kyle & Avery's Changes
+    console.log(request.body)
+    response.send('ok');
 
     try {
         const commentsArray = await Comments.find({});
@@ -14,6 +17,55 @@ router.get("/comments", async (request, response) => {
     }
 });
 
+router.post("/new" , async (request, response) => {
+    try{
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
+        const newComment = await Comments.insertMany({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
+        })
+    }
+    catch(error){
+        response.status(500).send(error);
+    }
+});
+
+router.post("/edit" , async (request, response) => {
+    try{
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
+
+        const editComment = await Comments.updateOne({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
+        })
+    }
+    catch(error){
+        response.status(500).send(error);
+    }
+});
+
+router.post("/delete" , async (request, response) => {
+    try{
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
+
+        const deleteComment = await Comments.deleteOne({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
+        })
+    }
+    catch(error){
+        response.status(500).send(error);
+    }
+});
 
 module.exports = router;
