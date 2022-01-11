@@ -5,6 +5,9 @@ const { Posts } = require('../models')
 
 
 router.get("/", async (request, response) => {
+    // Kyle & Avery's Changes
+    console.log(request.body)
+    response.send('ok');
 
     try {
         const postsArray = await Posts.find({});
