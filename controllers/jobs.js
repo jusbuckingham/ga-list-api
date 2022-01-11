@@ -34,5 +34,39 @@ router.post("/new" , async (request, response) => {
     }
 });
 
+// router.post("/edit" , async (request, response) => {
+//     try{
+
+//         const editJob = await Jobs.updateOne({
+//             title: request.body.name, 
+//             description: request.body.description, 
+//             post_text: request.body.post_text, 
+//             username: request.body.username, 
+//             likes: request.body.likes, 
+//             comments: request.body.comments, 
+//         })
+//     }
+//     catch(error){
+//         response.status(500).send(error);
+//     }
+// });
+
+// router.post("/delete" , async (request, response) => {
+//     try{
+
+//         const deleteJob = await Jobs.deleteOne({
+//             title: request.body.name, 
+//             description: request.body.description, 
+//             post_text: request.body.post_text, 
+//             username: request.body.username, 
+//             likes: request.body.likes, 
+//             comments: request.body.comments, 
+//         })
+//     }
+//     catch(error){
+//         response.status(500).send(error);
+//     }
+// });
+
 
 module.exports = router;
