@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const { Posts } = require('../Models')
+const { Posts } = require('../models')
 
 
 router.get("/", async (request, response) => {
@@ -17,47 +17,56 @@ router.get("/", async (request, response) => {
     }
 });
 
-router.post("/new" , async (request, response) => {
-    try{
+router.post("/new", async (request, response) => {
+    try {
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
         const newPost = await Posts.insertMany({
-            title: request.body.title, 
-            body: request.body.body, 
-            comments: request.body.comments,  
+            title: request.body.title,
+            body: request.body.body,
+            comments: request.body.comments,
         })
     }
-    catch(error){
+    catch (error) {
         response.status(500).send(error);
     }
 });
 
-// router.post("/edit" , async (request, response) => {
-//     try{
+router.post("/edit", async (request, response) => {
+    try {
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
-//         const editPost = await Posts.updateOne({
-//             title: request.body.title, 
-//             body: request.body.body, 
-//             comments: request.body.comments,  
-//         })
-//     }
-//     catch(error){
-//         response.status(500).send(error);
-//     }
-// });
+        const editPost = await Posts.updateOne({
+            title: request.body.title,
+            body: request.body.body,
+            comments: request.body.comments,
+        })
+    }
+    catch (error) {
+        response.status(500).send(error);
+    }
+});
 
-// router.post("/delete" , async (request, response) => {
-//     try{
+router.post("/delete", async (request, response) => {
+    try {
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
-//         const deletePost = await Posts.deleteOne({
-//             title: request.body.title, 
-//             body: request.body.body, 
-//             comments: request.body.comments,  
-//         })
-//     }
-//     catch(error){
-//         response.status(500).send(error);
-//     }
-// });
+        const deletePost = await Posts.deleteOne({
+            title: request.body.title,
+            body: request.body.body,
+            comments: request.body.comments,
+        })
+    }
+    catch (error) {
+        response.status(500).send(error);
+    }
+});
 
 
 module.exports = router;

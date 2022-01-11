@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const { Comments } = require('../Models')
+const { Comments } = require('../models')
 
 
 router.get("/", async (request, response) => {
@@ -19,6 +19,9 @@ router.get("/", async (request, response) => {
 
 router.post("/new" , async (request, response) => {
     try{
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
         const newComment = await Comments.insertMany({
             header: request.body.header, 
@@ -31,32 +34,38 @@ router.post("/new" , async (request, response) => {
     }
 });
 
-// router.post("/edit" , async (request, response) => {
-//     try{
+router.post("/edit" , async (request, response) => {
+    try{
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
-//         const editComment = await Comments.updateOne({
-//             header: request.body.header, 
-//             content: request.body.content, 
-//             date: request.body.date,  
-//         })
-//     }
-//     catch(error){
-//         response.status(500).send(error);
-//     }
-// });
+        const editComment = await Comments.updateOne({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
+        })
+    }
+    catch(error){
+        response.status(500).send(error);
+    }
+});
 
-// router.post("/delete" , async (request, response) => {
-//     try{
+router.post("/delete" , async (request, response) => {
+    try{
+        // Kyle & Avery's Changes
+        response.send('ok')
+        console.log(request.body)
 
-//         const deleteComment = await Comments.deleteOne({
-//             header: request.body.header, 
-//             content: request.body.content, 
-//             date: request.body.date,  
-//         })
-//     }
-//     catch(error){
-//         response.status(500).send(error);
-//     }
-// });
+        const deleteComment = await Comments.deleteOne({
+            header: request.body.header, 
+            content: request.body.content, 
+            date: request.body.date,  
+        })
+    }
+    catch(error){
+        response.status(500).send(error);
+    }
+});
 
 module.exports = router;
