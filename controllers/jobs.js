@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const { Jobs } = require('../models')
+const { Jobs } = require('../Models')
 
 
 router.get("/", async (request, response) => {
@@ -19,6 +19,9 @@ router.get("/", async (request, response) => {
 
 router.post("/new" , async (request, response) => {
     try{
+        // Kyle & Avery's Changes
+        response.send('ok');
+        return;
 
         const newJob = await Jobs.insertMany({
             title: request.body.name, 

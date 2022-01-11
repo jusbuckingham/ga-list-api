@@ -86,15 +86,15 @@ app.get("/forums", async (request, response) => {
     }
 });
 
-app.get("/posts", async (request, response) => {
+// app.get("/posts", async (request, response) => {
 
-    try {
-        const postsArray = await Posts.find({});
-        response.json({ postsArray });
-    } catch (error) {
-        response.status(500).send(error);
-    }
-});
+//     try {
+//         const postsArray = await Posts.find({});
+//         response.json({ postsArray });
+//     } catch (error) {
+//         response.status(500).send(error);
+//     }
+// });
 
 
 app.get("/comments", async (request, response) => {
