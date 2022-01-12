@@ -29,7 +29,7 @@ The backend was bulit with MongoDB, Express & Node
 
 ## ERD & WIREFRAME
 
-![Wireframe](./img/backend-wireframe.png)
+![Wireframe](./imgs/backend-wireframe.png)
 
 ## USER STORIES
 ### As a user I want to...
