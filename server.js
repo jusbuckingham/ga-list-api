@@ -15,8 +15,6 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -40,15 +38,15 @@ app.get('/', (req, res) => {
     });
 });
 
-// app.get("/users", async (request, response) => {
+app.get("/users", async (request, response) => {
 
-//     try {
-//         const usersArray = await Users.find({});
-//         response.json({ usersArray });
-//     } catch (error) {
-//         response.status(500).send(error);
-//     }
-// });
+    try {
+        const usersArray = await Users.find({});
+        response.json({ usersArray });
+    } catch (error) {
+        response.status(500).send(error);
+    }
+});
 
 app.get("/sales", async (request, response) => {
 
@@ -60,7 +58,9 @@ app.get("/sales", async (request, response) => {
     }
 
 });
-//app.use(express.json());
+
+// app.use(express.json());
+
 app.get("/jobs", async (request, response) => {
 
     try {
@@ -119,8 +119,6 @@ app.use('/posts', require('./controllers/posts'));
 app.use('/jobs', require('./controllers/jobs'));
 app.use('/forums', require('./controllers/forums'));
 app.use('/comments', require('./controllers/comments'));
-
-
 
 
 app.use('/users', users);
