@@ -34,7 +34,7 @@ router.post("/new" , async (request, response) => {
     }
 });
 
-router.post("/edit" , async (request, response) => {
+router.put("/edit/:id" , async (request, response) => {
     try{
         // Kyle & Avery's Changes
         response.send('ok')
@@ -51,7 +51,7 @@ router.post("/edit" , async (request, response) => {
     }
 });
 
-router.post("/delete" , async (request, response) => {
+router.delete("/:id" , async (request, response) => {
     try{
         // Kyle & Avery's Changes
         response.send('ok')

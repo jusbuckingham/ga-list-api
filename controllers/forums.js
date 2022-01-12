@@ -28,7 +28,7 @@ router.post("/new" , async (request, response) => {
             description: request.body.description, 
             post_text: request.body.post_text, 
             username: request.body.username, 
-            likes: request.body.lips, 
+            likes: request.body.likes, 
             comments: request.body.comments, 
         })
     }
