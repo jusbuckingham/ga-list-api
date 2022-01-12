@@ -107,9 +107,7 @@ app.get("/comments", async (request, response) => {
     }
 });
 
-<<<<<<< HEAD
 app.use('/users', users);
-=======
 app.post('/stored', (req, res) => {
     console.log(req.body);
     db.collection('quotes').insertOne(req.body, (err, data) => {
@@ -119,7 +117,6 @@ app.post('/stored', (req, res) => {
 });
 
 
->>>>>>> 15827aa19d49acd10bfc936ad4059e7e0d164e93
 
 //import controllers
 app.use('/users', require('./controllers/user'));
