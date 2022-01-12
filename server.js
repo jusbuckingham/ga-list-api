@@ -129,6 +129,6 @@ app.use('/jobs', jobs);
 app.use('/posts', posts);
 app.use('/sales', users);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is jammin' on port 3000 🎧")
 });
