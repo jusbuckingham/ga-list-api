@@ -38,10 +38,10 @@ The backend was bulit with MongoDB, Express & Node
 3. To log in (optional).
 4. To create and manage my own posts (have to be logged in).
 
-### Additional details
+<!-- ### Additional details
 - Who this is for: 
-- What this is for: 
-- Why: 
+- What this is for: To be able to browse classifieds in your area.
+- Why: To help ease -->
 
 ## Code Snippets
 ### Jobs Schema
@@ -77,6 +77,6 @@ router.get("/", async (request, response) => {
 ```
 
 
-## Descriptions of any unsolved problems or major hurdles your team had to overcome.
+## Hurdles your team had to overcome in this project.
 - Using Github Collaborations for the first time
 
