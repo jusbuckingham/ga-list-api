@@ -34,38 +34,4 @@ router.post("/new", async (request, response) => {
     }
 });
 
-router.put("/edit/:id", async (request, response) => {
-    try {
-
-        response.send('ok')
-        console.log(request.body)
-
-        const editComment = await Comments.updateOne({
-            header: request.body.header,
-            content: request.body.content,
-            date: request.body.date,
-        })
-    }
-    catch (error) {
-        response.status(500).send(error);
-    }
-});
-
-router.delete("/:id", async (request, response) => {
-    try {
-
-        response.send('ok')
-        console.log(request.body)
-
-        const deleteComment = await Comments.deleteOne({
-            header: request.body.header,
-            content: request.body.content,
-            date: request.body.date,
-        })
-    }
-    catch (error) {
-        response.status(500).send(error);
-    }
-});
-
 module.exports = router;
