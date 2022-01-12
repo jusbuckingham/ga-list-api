@@ -1,8 +1,8 @@
 # ga-list-api
 
 
-## Purpose of this application
-To serve as a marketplace to buy, sell and enteract with the community. 
+## Purpose of this api
+To serve data to the main ga-list application 
 
 <!-- ## How does it work? -->
 
@@ -25,7 +25,7 @@ Installation instructions for any dependencies
 <!-- ## Screenshots -->
 
 ## Explanations of the technologies used
-This was built using the MERN stack.
+The backend was bulit with MongoDB, Express & Node
 
 
 <!-- ## A couple paragraphs about the general approach you took -->
@@ -49,7 +49,38 @@ This was built using the MERN stack.
 - What this is for: 
 - Why:  -->
 
-<!-- ## Code Snippets -->
+## Code Snippets
+Jobs Schema
+```
+const mongoose = require("mongoose");
+
+const JobsSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    description: String,
+    payment: String,
+    contact_info: String,
+    location: String,
+});
+
+const Jobs = mongoose.model("Jobs", JobsSchema);
+
+module.exports = Jobs; 
+```
+Jobs Display
+```
+router.get("/", async (request, response) => {
+
+    console.log(request.body)
+    response.send('ok');
+
+    try {
+        const jobsArray = await Jobs.find({});
+        response.json({ jobsArray });
+    } catch (error) {
+        response.status(500).send(error);
+    }
+});
+```
 
 
 <!-- ## Descriptions of any unsolved problems or major hurdles your team had to overcome. -->
