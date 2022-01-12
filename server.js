@@ -1,10 +1,5 @@
 const express = require("express");
-const { Users } = require("./models");
-const { Sales } = require("./models");
-const { Jobs } = require("./models");
-const { Forums } = require("./models");
-const { Posts } = require("./models");
-const { Comments } = require("./models");
+const { User, Sales, Jobs, Forums, Posts, Comments } = require("./models");
 const app = express();
 const cors = require('cors');
 const passport = require('passport');
@@ -86,15 +81,15 @@ app.get("/forums", async (request, response) => {
     }
 });
 
-// app.get("/posts", async (request, response) => {
+app.get("/posts", async (request, response) => {
 
-//     try {
-//         const postsArray = await Posts.find({});
-//         response.json({ postsArray });
-//     } catch (error) {
-//         response.status(500).send(error);
-//     }
-// });
+    try {
+        const postsArray = await Posts.find({});
+        response.json({ postsArray });
+    } catch (error) {
+        response.status(500).send(error);
+    }
+});
 
 
 app.get("/comments", async (request, response) => {
@@ -135,6 +130,6 @@ app.use('/jobs', jobs);
 app.use('/posts', posts);
 app.use('/sales', users);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is jammin' on port 3000 🎧")
 });

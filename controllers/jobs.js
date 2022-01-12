@@ -5,7 +5,7 @@ const { Jobs } = require('../models')
 
 
 router.get("/", async (request, response) => {
-    // Kyle & Avery's Changes
+
     console.log(request.body)
     response.send('ok');
 
@@ -19,7 +19,7 @@ router.get("/", async (request, response) => {
 
 router.post("/new", async (request, response) => {
     try {
-        // Kyle & Avery's Changes
+
         response.send('ok')
         console.log(request.body)
 
@@ -36,46 +36,5 @@ router.post("/new", async (request, response) => {
         response.status(500).send(error);
     }
 });
-
-router.post("/edit", async (request, response) => {
-    try {
-        // Kyle & Avery's Changes
-        response.send('ok')
-        console.log(request.body)
-
-        const editJob = await Jobs.updateOne({
-            title: request.body.name,
-            description: request.body.description,
-            post_text: request.body.post_text,
-            username: request.body.username,
-            likes: request.body.likes,
-            comments: request.body.comments,
-        })
-    }
-    catch (error) {
-        response.status(500).send(error);
-    }
-});
-
-router.post("/delete", async (request, response) => {
-    try {
-        // Kyle & Avery's Changes
-        response.send('ok')
-        console.log(request.body)
-
-        const deleteJob = await Jobs.deleteOne({
-            title: request.body.name,
-            description: request.body.description,
-            post_text: request.body.post_text,
-            username: request.body.username,
-            likes: request.body.likes,
-            comments: request.body.comments,
-        })
-    }
-    catch (error) {
-        response.status(500).send(error);
-    }
-});
-
 
 module.exports = router;
