@@ -20,7 +20,6 @@ router.get("/", async (request, response) => {
 router.post("/new", async (request, response) => {
     try {
 
-
         response.send('ok')
         console.log(request.body)
 
@@ -40,7 +39,6 @@ router.post("/new", async (request, response) => {
 
 router.post("/edit", async (request, response) => {
     try {
-
 
         response.send('ok')
         console.log(request.body)

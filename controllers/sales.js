@@ -5,7 +5,7 @@ const { Sales } = require('../models')
 
 
 router.get("/", async (request, response) => {
-    // Kyle & Avery's Changes
+
     console.log(request.body)
     response.send('ok');
 
@@ -19,7 +19,7 @@ router.get("/", async (request, response) => {
 
 router.post("/new", async (request, response) => {
     try {
-        // Kyle & Avery's Changes
+
         response.send('ok')
         console.log(request.body)
 
@@ -39,7 +39,7 @@ router.post("/new", async (request, response) => {
 
 router.post("/edit", async (request, response) => {
     try {
-        // Kyle & Avery's Changes
+
         response.send('ok')
         console.log(request.body)
 
@@ -59,7 +59,7 @@ router.post("/edit", async (request, response) => {
 
 router.post("/delete", async (request, response) => {
     try {
-        // Kyle & Avery's Changes
+
         response.send('ok')
         console.log(request.body)
 
