@@ -50,7 +50,7 @@ The backend was bulit with MongoDB, Express & Node
 - Why:  -->
 
 ## Code Snippets
-Jobs Schema
+### Jobs Schema
 ```
 const mongoose = require("mongoose");
 
@@ -66,7 +66,7 @@ const Jobs = mongoose.model("Jobs", JobsSchema);
 
 module.exports = Jobs; 
 ```
-Jobs Display
+### Jobs Display
 ```
 router.get("/", async (request, response) => {
 
